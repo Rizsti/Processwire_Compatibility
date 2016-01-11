@@ -139,7 +139,7 @@ class WireLog extends Wire {
 		
 		foreach($dir as $file) {
 			if($file->isDot() || $file->isDir()) continue; 
-			if($file->getExtension() != 'txt') continue; 
+			if(pathinfo($file->getFilename(), PATHINFO_EXTENSION) != 'txt') continue; 
 			$name = basename($file, '.txt'); 
 			if($name != $this->wire('sanitizer')->pageName($name)) continue; 
 			$logs[$name] = array(

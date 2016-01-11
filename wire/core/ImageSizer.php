@@ -1112,7 +1112,8 @@ class ImageSizer extends Wire {
 	 *
 	 */
 	public function getExtension() {
-		return $this->extension; 
+		// return $this->extension; #PHP VERSION - ANDREA DEWEY -> below
+		return pathinfo($this->getFilename(), PATHINFO_EXTENSION);
 	}
 
 	/**
